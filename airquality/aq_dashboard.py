@@ -1,4 +1,4 @@
-'''Air quality'''
+'''City Air quality'''
 
 from flask import Flask, render_template, request
 import openaq
@@ -57,7 +57,7 @@ def create_app():
     def root():
         '''Retrieve date and airquality value'''
         records = Record.query.filter(Record.value >= 10).all()
-        return render_template('base.html', title="Home", records=records)
+        return render_template('base.html', title="home", records=records)
 
     @APP.route('/record', methods=['POST'])
     def add_record():
