@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Air Quality - {{ title }}</title>
+</head>
+
+<body>
+    <article class="flex two" style="padding: 3em 1em;">
+        {% block content %}
+        <div>
+            <h2>Latest Records</h2>
+            {% for record in records %}
+            <p>{{record}}</p>
+            {% endfor %}
+        </div>
+        {% endblock %}
+    </article>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/umbrellajs"/> -->
+</body>
+
+</html>

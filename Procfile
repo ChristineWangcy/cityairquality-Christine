@@ -1,0 +1,1 @@
+web: gunicorn airquality:APP -t 120

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Air Quality - {{ title }}</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="brand"><span>City Quality!</span></a>
+
+    </nav>
+
+    <article class="flex two" style="padding: 3em 1em;">
+        {% block content %}
+        <div>
+            <h2>Records</h2>
+            <form action="/record" method="post">
+                <input type="text" name="city_name" placeholder="Add records by city name">
+                <input type="submit" value="Add Record">
+            </form>
+            <h2>Latest</h2>
+            <form action="/latest" method="post">
+                <input type="text" name="city" placeholder="city">
+                <input type="submit" value="Search Latest Records">
+            </form>
+            <h2>Value > 10 records</h2>
+            {% for record in records %}
+            <p>{{record}}</p>
+            {% endfor %}
+        </div>
+        {% endblock %}
+    </article>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/umbrellajs"/> -->
+</body>
+
+</html>
